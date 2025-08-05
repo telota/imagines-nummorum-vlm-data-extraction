@@ -204,7 +204,7 @@ MIT License: https://opensource.org/licenses/MIT
 - Imagines Nummorum Project: https://www.imagines-nummorum.eu/de
 
 **Zitation:**  
-Imagines Nummorum VLM data extraction script. Entwickelt von Tim Westphal (2025). Berlin-Brandenburgische Akademie der Wissenschaften - TELOTA. URL: https://github.com/telota/imagines-nummorum-vlm-data-extraction; DOI: [Zenodo DOI bei Release].
+Imagines Nummorum VLM indexcard data extraction script. Entwickelt von Tim Westphal (2025). Berlin-Brandenburgische Akademie der Wissenschaften - TELOTA. URL: https://github.com/telota/imagines-nummorum-vlm-data-extraction; DOI: [Zenodo DOI bei Release].
 
 ## D. Informationen zur Methodik und Entwicklung
 
@@ -229,7 +229,7 @@ Imagines Nummorum VLM data extraction script. Entwickelt von Tim Westphal (2025)
    - VLM für kontextuelle Texterkennung
    - Konfigurierbare Strategien (parallel, fallback)
 
-3. **Intelligente Münzextraktion**:
+3. **Intelligente Münzbildextraktion**:
 
    - Bounding Box-Erkennung mit VLM
    - Adaptive Margin-Erkennung für optimale Ausschnitte
@@ -322,7 +322,7 @@ Imagines Nummorum VLM data extraction script. Entwickelt von Tim Westphal (2025)
 
 Für detaillierte Konfigurationsoptionen siehe:
 
-- [Technische Dokumentation](docs/TECHNICAL_DOCUMENTATION.md) - Algorithmus-Details
+- [Technische Dokumentation](docs/TECHNICAL_DOCUMENTATION.md) - Technische Dokumentation
 - [API-Referenz](docs/API_REFERENCE.md) - Funktions-Parameter
 - [Benutzerhandbuch](docs/USER_GUIDE.md) - Praxisbeispiele
 

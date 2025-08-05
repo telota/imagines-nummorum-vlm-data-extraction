@@ -416,24 +416,8 @@ Typical workflow for museum documentation:
 3. **Use "both" OCR strategy** for maximum text extraction
 4. **Review card_fields extraction** for metadata accuracy
 5. **Export to CSV** for database integration
-
-### Archaeological Documentation
-
-For archaeological finds documentation:
-
-1. **Process documentation forms** with embedded photos
-2. **Extract coin/artifact images** automatically
-3. **Preserve spatial relationships** using bounding boxes
-4. **Cross-reference with field notes** using extracted text
-
-### Digital Archive Processing
-
-For large digital collections:
-
-1. **Batch process by date/collection**
-2. **Monitor for handwritten annotations**
-3. **Validate OCR quality** for searchable archives
-4. **Generate metadata catalogs** from card fields
+6. **Batch process by date/collection**
+7. **Monitor for handwritten annotations**
 
 ## Quality Assurance
 

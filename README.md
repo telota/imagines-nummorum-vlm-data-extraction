@@ -26,7 +26,7 @@ Dieses Tool bietet eine automatisierte Extraktion und Strukturierung von Daten a
 Imagines Nummorum VLM Data Extraction Pipeline
 
 **Kurze Beschreibung der Software:**  
-Ein Tool zur automatisierten Analyse Karteikarten mittels Vision-Language-Model (Qwen2.5-VL). Das System führt eine mehrstufige Bildanalyse durch, klassifiziert Bilder, erkennt handschriftlichen Inhalt und extrahiert strukturiert Daten.
+Ein Tool zur automatisierten Analyse von Karteikarten mittels Vision-Language-Model (Qwen2.5-VL). Das System führt eine mehrstufige Bildanalyse durch, klassifiziert Bilder, erkennt handschriftlichen Inhalt und extrahiert strukturiert Daten.
 
 **Software-Typ:**  
 Computer Vision Pipeline / Datenverarbeitungs-Skript

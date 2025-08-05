@@ -1,10 +1,8 @@
 # Imagines Nummorum VLM Data Extraction Pipeline
 
-> Ein Computer Vision-Skript zur automatisierten Analyse von Karteikarten einer Sammlung von Münzfälschungen mit dem Qwen2.5-VL Vision-Language-Model.
-
 ## 🔍 Überblick
 
-Dieses Tool bietet eine automatisierte Extraktion und Strukturierung von Daten aus numismatischer Dokumentation. Es verarbeitet Museums-Katalogkarten, Dokumentationsformulare und Textseiten, um Münzmetadaten zu extrahieren, OCR durchzuführen und strukturierte JSON-Ausgaben zu generieren.
+> Ein Computer Vision-Skript zur automatisierten Analyse von Karteikarten einer Sammlung von Münzfälschungen mit dem Qwen2.5-VL Vision-Language-Model.
 
 **Aktuelle Version:** 1.0  
 **Datum:** August 2025
@@ -26,7 +24,7 @@ Dieses Tool bietet eine automatisierte Extraktion und Strukturierung von Daten a
 Imagines Nummorum VLM Data Extraction Pipeline
 
 **Kurze Beschreibung der Software:**  
-Ein Tool zur automatisierten Analyse von Karteikarten mittels Vision-Language-Model (Qwen2.5-VL). Das System führt eine mehrstufige Bildanalyse durch, klassifiziert Bilder, erkennt handschriftlichen Inhalt und extrahiert strukturiert Daten.
+Ein Tool zur automatisierten Analyse von Karteikarten mittels Vision-Language-Model (Qwen2.5-VL). Das System führt eine mehrstufige Bildanalyse durch, klassifiziert Bilder, erkennt handschriftlichen Inhalt und extrahiert strukturierte Daten.
 
 **Software-Typ:**  
 Computer Vision Pipeline / Datenverarbeitungs-Skript
@@ -38,16 +36,8 @@ Python, JSON, hOCR XML, CSV
 Zuarbeit für das Vorhaben Imagines Nummorum (https://www.imagines-nummorum.eu/de)
 
 **Kurze Beschreibung des Forschungsprojekts und seiner Ziele:**  
-Das Projekt Imagines Nummorum digitalisiert und erschließt antike Münzen zur Erforschung der antiken Numismatik. Diese Software unterstützt die automatisierte Extraktion und Strukturierung von Münzdaten aus digitalisierten Archivmaterialien zur Erstellung digitaler Kataloge und Forschungsdatenbanken.
+Das Projekt Imagines Nummorum digitalisiert und erschließt antike Münzen. Diese Software unterstützt die automatisierte Extraktion und Strukturierung von Daten aus digitalisierten Karteikarten zur Erstellung einer Forschungsdatenbank.
 
-**Fächerzugehörigkeit:**  
-1.11-03 Alte Geschichte
-
-**URL des Software-Repositorys:**  
-https://github.com/telota/imagines-nummorum-vlm-data-extraction
-
-**Projektlaufzeit:**  
-von 2025-06 bis 2025-12
 
 **Angaben zu Autor:in, Herausgeber:in und Entwickler:in**
 

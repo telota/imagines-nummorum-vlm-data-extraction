@@ -42,6 +42,49 @@ CROP_MARGIN_PIXELS = 30  # Smaller crops to save memory
 DEBUG_VISUALIZATION = False  # Disable debug images
 ```
 
+### 4. Configuration with Explicit Tesseract Path
+
+```python
+# Configuration when Tesseract is not in system PATH
+import pytesseract
+
+# Windows example
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+# Linux example  
+# pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+
+# macOS example
+# pytesseract.pytesseract.tesseract_cmd = '/opt/homebrew/bin/tesseract'
+
+INPUT_IMAGE_DIRECTORY = "./input_images"
+OUTPUT_JSON_DIRECTORY = "./output_results"
+OCR_STRATEGY_FOR_TEXT_PAGES = "both"  # Use both Tesseract and Qwen
+```
+
+### 5. Jupyter Notebook Configuration
+
+```python
+# Configuration optimized for Jupyter environments
+import sys
+import os
+
+# Add project root to path if needed
+sys.path.append('/path/to/project/root')
+
+# Configuration
+INPUT_IMAGE_DIRECTORY = "./sample_data"
+OUTPUT_JSON_DIRECTORY = "./notebook_results"
+MODEL_ID = "Qwen/Qwen2.5-VL-7B-Instruct"  # Smaller model for notebooks
+MODEL_CACHE_DIR = "./models"
+
+# Enable progress bars in Jupyter
+from tqdm.notebook import tqdm
+
+# Execute processing
+exec(open('src/coin_card_information_extraction.py').read())
+```
+
 ## Example Processing Workflows
 
 ### Workflow 1: Museum Catalog Digitization
@@ -79,8 +122,8 @@ catalog_results/
 ├── collection_ancient_greek/
 │   ├── athens_tetradrachm_001.json
 │   ├── athens_tetradrachm_001_extracted_images/
-│   │   ├── coin_1_obverse.png
-│   │   └── coin_1_reverse.png
+│   │   ├── athens_tetradrachm_001_1.png
+│   │   └── athens_tetradrachm_001_2.png
 │   └── ...
 ├── collection_roman/
 │   └── ...
@@ -206,7 +249,9 @@ def process_archive_in_chunks(chunk_size=1000):
       }
     }
   },
-  "images_extracted": ["athens_tetradrachm_001_extracted_images/coin_1.png"],
+  "images_extracted": [
+    "athens_tetradrachm_001_extracted_images/athens_tetradrachm_001_1.png"
+  ],
   "status": "success",
   "error_message": null
 }

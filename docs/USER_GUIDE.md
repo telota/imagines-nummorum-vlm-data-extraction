@@ -63,8 +63,21 @@ OCR_STRATEGY_FOR_TEXT_PAGES = "both"  # tesseract_hocr_only, qwen_text_only, bot
 
 Execute the main script:
 
+**Command Line:**
 ```bash
 python src/coin_card_information_extraction.py
+```
+
+**Jupyter Notebook:**
+If working in a Jupyter environment, you can run the script in a notebook cell:
+```python
+%run src/coin_card_information_extraction.py
+```
+
+**Alternative execution:**
+```bash
+# From the project root directory
+python -m src.coin_card_information_extraction
 ```
 
 You'll see progress output like:
@@ -87,8 +100,8 @@ output_results/
 ├── collection_A/
 │   ├── coin_card_001.json
 │   ├── coin_card_001_extracted_images/
-│   │   ├── coin1_obverse.png
-│   │   └── coin1_reverse.png
+│   │   ├── coin_card_001_1.png
+│   │   └── coin_card_001_2.png
 │   ├── coin_card_002.json
 │   └── text_page_001.json
 ├── collection_B/
@@ -133,9 +146,69 @@ Each processed image generates a JSON file with the following structure:
       }
     }
   },
-  "images_extracted": ["coin_card_001_extracted_images/coin_1.png"],
+  "images_extracted": ["coin_card_001_extracted_images/coin_card_001_1.png"],
   "status": "success",
   "error_message": null
+}
+```
+
+### Complete JSON Output Structure
+
+The JSON structure varies by image type. Here's the complete format:
+
+```json
+{
+  "image_path_original": "/path/to/original/image.jpg",
+  "image_type": "form|text_page|empty_page",
+  "handwritten_content": true|false,
+  "data": "varies by image_type - see detailed sections below",
+  "images_extracted": ["relative/path/to/extracted_image.png"],
+  "status": "success|classification_failed|form_extraction_failed|text_extraction_failed",
+  "error_message": "detailed error message if failed"
+}
+```
+
+#### Status Values:
+- `"success"`: Processing completed successfully
+- `"classification_failed"`: Stage 1 (image type detection) failed
+- `"form_extraction_failed"`: Form data extraction failed
+- `"text_extraction_failed"`: OCR processing failed
+
+#### Data Structure by Image Type:
+
+**Empty Pages:**
+```json
+{
+  "data": null
+}
+```
+
+**Text Pages:**
+```json
+{
+  "data": {
+    "ocr_results": [
+      {
+        "source": "tesseract|qwen",
+        "type": "hocr_xml|plain_text", 
+        "content": "extracted text or hOCR XML",
+        "status": "success|failed",
+        "error_message": null
+      }
+    ]
+  }
+}
+```
+
+**Forms:**
+```json
+{
+  "data": {
+    "form_data": {
+      "coins": [...],
+      "card_fields": {...}
+    }
+  }
 }
 ```
 
@@ -158,9 +231,15 @@ Each processed image generates a JSON file with the following structure:
       "card_fields": {...}
     }
   },
-  "images_extracted": ["coin1.png", "coin2.png"]
+  "images_extracted": ["image_1.png", "image_2.png"]
 }
 ```
+
+**Cropped Image Details:**
+- **Directory**: Saved in `{original_name}_extracted_images/` subdirectory
+- **Naming**: `{original_name}_{coin_number}.png` (e.g., `coin_card_001_1.png`)
+- **Format**: PNG with optimized margins
+- **Margins**: Automatically detected based on background uniformity
 
 #### 2. Text Pages
 
@@ -234,18 +313,31 @@ for subdir in subdirs:
 Choose the appropriate OCR strategy based on your content:
 
 ```python
-# For multilingual text
+# Available OCR strategies for text pages:
+
+# Option 1: Tesseract only (outputs hOCR XML format)
 OCR_STRATEGY_FOR_TEXT_PAGES = "tesseract_hocr_only"
 
-# For handwritten content
-OCR_STRATEGY_FOR_TEXT_PAGES = "qwen_text_only"
+# Option 2: Qwen-VL only (outputs plain text)
+OCR_STRATEGY_FOR_TEXT_PAGES = "qwen_text_only" 
 
-# For maximum accuracy
-OCR_STRATEGY_FOR_TEXT_PAGES = "both"
+# Option 3: Try Tesseract first, fallback to Qwen-VL if it fails
+OCR_STRATEGY_FOR_TEXT_PAGES = "tesseract_then_qwen_fallback"
 
-# For fallback processing
+# Option 4: Try Qwen-VL first, fallback to Tesseract if it fails  
 OCR_STRATEGY_FOR_TEXT_PAGES = "qwen_then_tesseract_fallback"
+
+# Option 5: Run both methods independently (maximum accuracy)
+OCR_STRATEGY_FOR_TEXT_PAGES = "both"
 ```
+
+**Strategy Selection Guidelines:**
+
+- **For multilingual text**: Use `"tesseract_hocr_only"` - Tesseract has better language support
+- **For handwritten content**: Use `"qwen_text_only"` - AI models handle handwriting better
+- **For maximum accuracy**: Use `"both"` - Compare results from both methods
+- **For speed**: Use `"qwen_text_only"` or `"tesseract_hocr_only"`
+- **For reliability**: Use fallback strategies with primary + backup method
 
 ### Optimizing Coin Extraction
 

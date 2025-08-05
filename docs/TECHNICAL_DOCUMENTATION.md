@@ -225,8 +225,8 @@ output_directory/
 ├── subfolder1/
 │   ├── image1.json
 │   ├── image1_extracted_images/
-│   │   ├── coin1_obverse.png
-│   │   └── coin1_reverse.png
+│   │   ├── image1_1.png
+│   │   └── image1_2.png
 │   └── image2.json
 └── subfolder2/
     └── image3.json

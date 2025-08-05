@@ -1,0 +1,13 @@
+torch
+torchvision
+torchaudio
+transformers
+accelerate
+Pillow
+requests
+jsonschema
+pytesseract
+tqdm
+hf-xet
+qwen_vl_utils
+natsort

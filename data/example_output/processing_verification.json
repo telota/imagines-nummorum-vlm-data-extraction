@@ -1,0 +1,23 @@
+{
+  "total_images": 5623,
+  "processed_successfully": 5620,
+  "missing_json": [
+    {
+      "image": "/mnt/data/projects/imagines_nummorum/coin_cards/scans/Antiochos VIII/Antiochos VIII-12a.jpg",
+      "expected_json": "/mnt/data/projects/imagines_nummorum/coin_cards/output/Antiochos VIII/Antiochos VIII-12a.json"
+    },
+    {
+      "image": "/mnt/data/projects/imagines_nummorum/coin_cards/scans/Antiochos VIII/Antiochos VIII-12b.jpg",
+      "expected_json": "/mnt/data/projects/imagines_nummorum/coin_cards/output/Antiochos VIII/Antiochos VIII-12b.json"
+    }
+  ],
+  "failed_processing": [
+    {
+      "image": "/mnt/data/projects/imagines_nummorum/coin_cards/scans/Cydonia/Cydonia-4a.jpg",
+      "json": "/mnt/data/projects/imagines_nummorum/coin_cards/output/Cydonia/Cydonia-4a.json",
+      "status": "form_extraction_failed",
+      "error": "JSONDecodeError for Form Extraction: Extra data: line 39 column 1 (char 829)"
+    }
+  ],
+  "json_parse_errors": []
+}

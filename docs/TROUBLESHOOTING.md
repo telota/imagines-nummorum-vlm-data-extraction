@@ -251,11 +251,11 @@ def validate_and_repair_json(json_data, expected_schema):
     # Add validation logic
     if "image_type" not in json_data:
         return None, "Missing required field: image_type"
-    
+
     valid_types = ["form", "text_page", "empty_page"]
     if json_data["image_type"] not in valid_types:
         return None, f"Invalid image_type: {json_data['image_type']}"
-    
+
     return json_data, None
 
 # Monitor and log problematic images
@@ -265,6 +265,7 @@ def log_processing_issues(image_path, error_message):
 ```
 
 **Additional Steps:**
+
 - Check the `error_message` field in output JSON files
 - Review `tqdm` progress logs for patterns in failures
 - For persistent issues, consider manual review of problematic images

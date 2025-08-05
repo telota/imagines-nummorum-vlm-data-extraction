@@ -1,10 +1,10 @@
 # Imagines Nummorum VLM Data Extraction Pipeline
 
-> An advanced computer vision and NLP system for automated analysis of historical coin documentation using Qwen2.5-VL vision-language model.
+> A computer vision and NLP system for automated analysis of cards of a collection of coin forgeries using Qwen2.5-VL vision-language model.
 
 ## 🔍 Overview
 
-This system provides automated extraction and structuring of data from historical numismatic documentation. It processes museum catalog cards, documentation forms, and text pages to extract coin metadata, perform OCR, and generate structured JSON outputs for digital humanities research.
+This system provides automated extraction and structuring of data from numismatic documentation. It processes museum catalog cards, documentation forms, and text pages to extract coin metadata, perform OCR, and generate structured JSON outputs.
 
 **Current Version:** 1.0  
 **Date:** August 2025
@@ -26,7 +26,7 @@ This system provides automated extraction and structuring of data from historica
 Imagines Nummorum VLM data extraction script
 
 **Kurze Beschreibung der Software:**  
-Ein fortschrittliches Tool zur automatisierten Analyse von Münzbildern und historischen Dokumenten mittels Vision-Language-Model (Qwen2.5-VL). Das System führt eine mehrstufige Bildanalyse durch, klassifiziert Bilder, erkennt handschriftlichen Inhalt und extrahiert strukturierte Daten für die digitale Numismatik.
+Ein Tool zur automatisierten Analyse Karteikarten mittels Vision-Language-Model (Qwen2.5-VL). Das System führt eine mehrstufige Bildanalyse durch, klassifiziert Bilder, erkennt handschriftlichen Inhalt und extrahiert strukturierte Daten.
 
 **Software-Typ:**  
 Computer Vision Pipeline / Datenverarbeitungs-Skript

@@ -64,17 +64,20 @@ OCR_STRATEGY_FOR_TEXT_PAGES = "both"  # tesseract_hocr_only, qwen_text_only, bot
 Execute the main script:
 
 **Command Line:**
+
 ```bash
 python src/coin_card_information_extraction.py
 ```
 
 **Jupyter Notebook:**
 If working in a Jupyter environment, you can run the script in a notebook cell:
+
 ```python
 %run src/coin_card_information_extraction.py
 ```
 
 **Alternative execution:**
+
 ```bash
 # From the project root directory
 python -m src.coin_card_information_extraction
@@ -169,6 +172,7 @@ The JSON structure varies by image type. Here's the complete format:
 ```
 
 #### Status Values:
+
 - `"success"`: Processing completed successfully
 - `"classification_failed"`: Stage 1 (image type detection) failed
 - `"form_extraction_failed"`: Form data extraction failed
@@ -177,6 +181,7 @@ The JSON structure varies by image type. Here's the complete format:
 #### Data Structure by Image Type:
 
 **Empty Pages:**
+
 ```json
 {
   "data": null
@@ -184,13 +189,14 @@ The JSON structure varies by image type. Here's the complete format:
 ```
 
 **Text Pages:**
+
 ```json
 {
   "data": {
     "ocr_results": [
       {
         "source": "tesseract|qwen",
-        "type": "hocr_xml|plain_text", 
+        "type": "hocr_xml|plain_text",
         "content": "extracted text or hOCR XML",
         "status": "success|failed",
         "error_message": null
@@ -201,6 +207,7 @@ The JSON structure varies by image type. Here's the complete format:
 ```
 
 **Forms:**
+
 ```json
 {
   "data": {
@@ -236,6 +243,7 @@ The JSON structure varies by image type. Here's the complete format:
 ```
 
 **Cropped Image Details:**
+
 - **Directory**: Saved in `{original_name}_extracted_images/` subdirectory
 - **Naming**: `{original_name}_{coin_number}.png` (e.g., `coin_card_001_1.png`)
 - **Format**: PNG with optimized margins
@@ -319,12 +327,12 @@ Choose the appropriate OCR strategy based on your content:
 OCR_STRATEGY_FOR_TEXT_PAGES = "tesseract_hocr_only"
 
 # Option 2: Qwen-VL only (outputs plain text)
-OCR_STRATEGY_FOR_TEXT_PAGES = "qwen_text_only" 
+OCR_STRATEGY_FOR_TEXT_PAGES = "qwen_text_only"
 
 # Option 3: Try Tesseract first, fallback to Qwen-VL if it fails
 OCR_STRATEGY_FOR_TEXT_PAGES = "tesseract_then_qwen_fallback"
 
-# Option 4: Try Qwen-VL first, fallback to Tesseract if it fails  
+# Option 4: Try Qwen-VL first, fallback to Tesseract if it fails
 OCR_STRATEGY_FOR_TEXT_PAGES = "qwen_then_tesseract_fallback"
 
 # Option 5: Run both methods independently (maximum accuracy)

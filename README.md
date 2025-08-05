@@ -1,24 +1,24 @@
 # Imagines Nummorum VLM Data Extraction Pipeline
 
-> A computer vision and NLP system for automated analysis of cards of a collection of coin forgeries using Qwen2.5-VL vision-language model.
+> Ein Computer Vision-Skript zur automatisierten Analyse von Karteikarten einer Sammlung von Münzfälschungen mit dem Qwen2.5-VL Vision-Language-Model.
 
-## 🔍 Overview
+## 🔍 Überblick
 
-This system provides automated extraction and structuring of data from numismatic documentation. It processes museum catalog cards, documentation forms, and text pages to extract coin metadata, perform OCR, and generate structured JSON outputs.
+Dieses Tool bietet eine automatisierte Extraktion und Strukturierung von Daten aus numismatischer Dokumentation. Es verarbeitet Museums-Katalogkarten, Dokumentationsformulare und Textseiten, um Münzmetadaten zu extrahieren, OCR durchzuführen und strukturierte JSON-Ausgaben zu generieren.
 
-**Current Version:** 1.0  
-**Date:** August 2025
+**Aktuelle Version:** 1.0  
+**Datum:** August 2025
 
-### Key Features
+### Hauptfunktionen
 
-- 🤖 **Multi-stage AI Analysis** using Qwen2.5-VL vision-language model
-- 📝 **Automatic Content Classification** (forms, text pages, empty pages)
-- 🔍 **Intelligent Coin Detection** with bounding box extraction
-- 📊 **Structured Metadata Extraction** from catalog cards
-- 🔤 **Hybrid OCR Processing** (Tesseract + AI-based text recognition)
-- 🖼️ **Automated Image Cropping** with smart margin detection
-- 📁 **Batch Processing** with progress tracking
-- 📈 **CSV Export** for database integration and analysis
+- 🤖 **Mehrstufige KI-Analyse** mit dem Qwen2.5-VL Vision-Language-Model
+- 📝 **Automatische Inhaltsklassifikation** (Formulare, Textseiten, leere Seiten)
+- 🔍 **Intelligente Münzerkennung** mit Bounding-Box-Extraktion
+- 📊 **Strukturierte Metadatenextraktion** von Katalogkarten
+- 🔤 **Hybrid-OCR-Verarbeitung** (Tesseract + KI-basierte Texterkennung)
+- 🖼️ **Automatisiertes Bildzuschneiden** mit intelligenter Randerkennung
+- 📁 **Stapelverarbeitung** mit Fortschrittsanzeige
+- 📈 **CSV-Export** für Datenbankintegration und Analyse
 
 ## A. Allgemeine Informationen
 
@@ -66,13 +66,13 @@ deu (Deutsch), eng (Englisch)
 **Kompatibilität mit Plattformen:**  
 Windows, MacOS, Linux
 
-## 🚀 Quick Start
+## 🚀 Schnellstart
 
-### Prerequisites
+### Voraussetzungen
 
-- Python 3.8+ (3.9+ recommended)
-- 16GB+ RAM (64GB+ for optimal performance)
-- GPU with 8GB+ VRAM (optional but recommended)
+- Python 3.8+ (3.9+ empfohlen)
+- 16GB+ RAM (64GB+ für optimale Leistung)
+- GPU mit 8GB+ VRAM (optional aber empfohlen)
 
 ### Installation
 
@@ -84,23 +84,23 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### Basic Usage
+### Grundlegende Nutzung
 
 ```bash
 python src/coin_card_information_extraction.py
 ```
 
-For detailed setup instructions, see [INSTALLATION.md](INSTALLATION.md).
+Für detaillierte Installationsanweisungen siehe [INSTALLATION.md](INSTALLATION.md).
 
-## 📚 Documentation
+## 📚 Dokumentation
 
-| Document                                              | Description                        |
-| ----------------------------------------------------- | ---------------------------------- |
-| [Installation Guide](INSTALLATION.md)                 | Complete setup instructions        |
-| [User Guide](USER_GUIDE.md)                           | Step-by-step usage tutorial        |
-| [Technical Documentation](TECHNICAL_DOCUMENTATION.md) | System architecture and algorithms |
-| [API Reference](API_REFERENCE.md)                     | Function and class documentation   |
-| [Troubleshooting](TROUBLESHOOTING.md)                 | Common issues and solutions        |
+| Dokument                                               | Beschreibung                           |
+| ------------------------------------------------------ | -------------------------------------- |
+| [Installationsanleitung](INSTALLATION.md)              | Vollständige Installationsanweisungen  |
+| [Benutzerhandbuch](USER_GUIDE.md)                      | Schritt-für-Schritt Anwendungstutorial |
+| [Technische Dokumentation](TECHNICAL_DOCUMENTATION.md) | Systemarchitektur und Algorithmen      |
+| [API-Referenz](API_REFERENCE.md)                       | Funktions- und Klassendokumentation    |
+| [Fehlerbehebung](TROUBLESHOOTING.md)                   | Häufige Probleme und Lösungen          |
 
 ## B. Software-Übersicht & Dateistruktur
 

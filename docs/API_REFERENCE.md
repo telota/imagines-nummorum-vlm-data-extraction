@@ -618,41 +618,4 @@ def time_function(func):
     return wrapper
 ```
 
-## Testing Framework
-
-### Unit Test Examples
-
-```python
-import unittest
-import tempfile
-import json
-from PIL import Image
-
-class TestProcessingPipeline(unittest.TestCase):
-
-    def setUp(self):
-        self.temp_dir = tempfile.mkdtemp()
-        # Create test image
-        self.test_image = Image.new('RGB', (800, 600), color='white')
-        self.test_image_path = os.path.join(self.temp_dir, 'test.jpg')
-        self.test_image.save(self.test_image_path)
-
-    def test_classification_validation(self):
-        valid_data = {
-            "image_type": "form",
-            "handwritten_content": True
-        }
-        self.assertIsNone(_validate_classification_json(valid_data))
-
-        invalid_data = {"image_type": "invalid"}
-        with self.assertRaises(ValueError):
-            _validate_classification_json(invalid_data)
-
-    def test_coin_margin_detection(self):
-        bbox = {"x": 100, "y": 100, "width": 200, "height": 200}
-        margin = _find_optimal_margin(self.test_image, bbox)
-        self.assertIsInstance(margin, int)
-        self.assertGreaterEqual(margin, INITIAL_CROP_MARGIN)
-```
-
 This API reference provides comprehensive documentation for all functions, classes, and configuration options in the system. Use it as a guide for customization and extension of the pipeline functionality.

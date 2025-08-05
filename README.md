@@ -23,7 +23,7 @@ Dieses Tool bietet eine automatisierte Extraktion und Strukturierung von Daten a
 ## A. Allgemeine Informationen
 
 **Titel der Software:**  
-Imagines Nummorum VLM data extraction script
+Imagines Nummorum VLM Data Extraction Pipeline
 
 **Kurze Beschreibung der Software:**  
 Ein Tool zur automatisierten Analyse Karteikarten mittels Vision-Language-Model (Qwen2.5-VL). Das System führt eine mehrstufige Bildanalyse durch, klassifiziert Bilder, erkennt handschriftlichen Inhalt und extrahiert strukturiert Daten.
@@ -90,17 +90,17 @@ pip install -r requirements.txt
 python src/coin_card_information_extraction.py
 ```
 
-Für detaillierte Installationsanweisungen siehe [INSTALLATION.md](INSTALLATION.md).
+Für detaillierte Installationsanweisungen siehe [INSTALLATION.md](docs/INSTALLATION.md).
 
 ## 📚 Dokumentation
 
-| Dokument                                               | Beschreibung                           |
-| ------------------------------------------------------ | -------------------------------------- |
-| [Installationsanleitung](INSTALLATION.md)              | Vollständige Installationsanweisungen  |
-| [Benutzerhandbuch](USER_GUIDE.md)                      | Schritt-für-Schritt Anwendungstutorial |
-| [Technische Dokumentation](TECHNICAL_DOCUMENTATION.md) | Systemarchitektur und Algorithmen      |
-| [API-Referenz](API_REFERENCE.md)                       | Funktions- und Klassendokumentation    |
-| [Fehlerbehebung](TROUBLESHOOTING.md)                   | Häufige Probleme und Lösungen          |
+| Dokument                                                    | Beschreibung                           |
+| ----------------------------------------------------------- | -------------------------------------- |
+| [Installationsanleitung](docs/INSTALLATION.md)              | Vollständige Installationsanweisungen  |
+| [Benutzerhandbuch](docs/USER_GUIDE.md)                      | Schritt-für-Schritt Anwendungstutorial |
+| [Technische Dokumentation](docs/TECHNICAL_DOCUMENTATION.md) | Systemarchitektur und Algorithmen      |
+| [API-Referenz](docs/API_REFERENCE.md)                       | Funktions- und Klassendokumentation    |
+| [Fehlerbehebung](docs/TROUBLESHOOTING.md)                   | Häufige Probleme und Lösungen          |
 
 ## B. Software-Übersicht & Dateistruktur
 
@@ -142,10 +142,12 @@ Für detaillierte Installationsanweisungen siehe [INSTALLATION.md](INSTALLATION.
 ├── docs/                                   # Dokumentation
 ├── requirements.txt                        # Python-Abhängigkeiten
 ├── README.md                              # Diese Datei
-├── INSTALLATION.md                        # Installationsanleitung
-├── USER_GUIDE.md                         # Benutzerhandbuch
-├── TECHNICAL_DOCUMENTATION.md            # Technische Dokumentation
-├── API_REFERENCE.md                      # API-Referenz
+├── docs/
+│   ├── INSTALLATION.md                    # Installationsanleitung
+│   ├── USER_GUIDE.md                     # Benutzerhandbuch
+│   ├── TECHNICAL_DOCUMENTATION.md        # Technische Dokumentation
+│   ├── API_REFERENCE.md                  # API-Referenz
+│   └── TROUBLESHOOTING.md                # Fehlerbehebung
 └── TROUBLESHOOTING.md                    # Fehlerbehebung
 ```
 
@@ -183,7 +185,7 @@ qwen_vl_utils
 natsort
 ```
 
-Detaillierte Installationsanweisungen finden Sie in [INSTALLATION.md](INSTALLATION.md).
+Detaillierte Installationsanweisungen finden Sie in [INSTALLATION.md](docs/INSTALLATION.md).
 
 ## C. Gemeinsame Nutzung/Zugang zu Informationen
 
@@ -330,9 +332,9 @@ Imagines Nummorum VLM data extraction script. Entwickelt von Tim Westphal (2025)
 
 Für detaillierte Konfigurationsoptionen siehe:
 
-- [Technische Dokumentation](TECHNICAL_DOCUMENTATION.md) - Algorithmus-Details
-- [API-Referenz](API_REFERENCE.md) - Funktions-Parameter
-- [Benutzerhandbuch](USER_GUIDE.md) - Praxisbeispiele
+- [Technische Dokumentation](docs/TECHNICAL_DOCUMENTATION.md) - Algorithmus-Details
+- [API-Referenz](docs/API_REFERENCE.md) - Funktions-Parameter
+- [Benutzerhandbuch](docs/USER_GUIDE.md) - Praxisbeispiele
 
 ## 🤝 Beitrag und Entwicklung
 
@@ -349,7 +351,7 @@ Dieses Projekt ist Teil des Imagines Nummorum-Vorhabens der Berlin-Brandenburgis
 **E-Mail:** tim.westphal@bbaw.de  
 **ORCID:** https://orcid.org/0009-0000-8580-4558
 
-Für technischen Support siehe [TROUBLESHOOTING.md](TROUBLESHOOTING.md) oder kontaktieren Sie uns direkt.
+Für technischen Support siehe [TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) oder kontaktieren Sie uns direkt.
 
 ---
 

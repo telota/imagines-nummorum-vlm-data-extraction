@@ -345,5 +345,3 @@ output_directory/
 ## Version History
 
 - **v1.0** (2025-06): Initial release with Qwen2.5-VL integration
-- **v1.1** (planned): Enhanced error handling and performance optimization
-- **v2.0** (planned): Multi-model support and advanced analytics

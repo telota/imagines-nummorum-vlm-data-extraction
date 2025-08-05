@@ -1,4 +1,4 @@
-# Imagines Nummorum VLM Data Extraction Pipeline
+# Imagines Nummorum VLM Indexcard Data Extraction Pipeline
 
 ## 🔍 Überblick
 

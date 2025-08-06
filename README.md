@@ -4,6 +4,8 @@
 
 > Ein Computer Vision-Skript zur automatisierten Analyse von Karteikarten einer Sammlung von Münzfälschungen ([The Callataÿ’ file of counterfeit Greek coins on the ACCSN platform](https://accs-network.com/counterfeits-info-cards-collection/)) mit dem Qwen2.5-VL Vision-Language-Model.
 
+![example_input/Abdera-4a.jpg](data/example_input/Abdera-4a.jpg)
+
 **Aktuelle Version:** 1.0  
 **Datum:** August 2025
 
@@ -33,11 +35,16 @@ Computer Vision Pipeline / Datenverarbeitungs-Skript
 Python, JSON, hOCR XML, CSV
 
 **Titel des Forschungsprojekts:**  
-Imagines Nummorum (https://www.imagines-nummorum.eu/)
+Imagines Nummorum (https://www.imagines-nummorum.eu)
 
 **Kurze Beschreibung des Forschungsprojekts und seiner Ziele:**  
-Das Projekt Imagines Nummorum digitalisiert und erschließt antike Münzen. Diese Software unterstützt die automatisierte Extraktion und Strukturierung von Daten aus digitalisierten Karteikarten zur Erstellung einer Forschungsdatenbank.
+Ziel des Akademienvorhabens „Imagines Nummorum: Thesaurus Iconographicus Nummorum Graecorum Online (ThING)“ ist es, mit der Erarbeitung eines hierarchischen ikonographischen Thesaurus auf der Basis von Linked Open Data das Potenzial antiker griechischer Münzen für bildwissenschaftliche und kulturhistorische Fragestellungen aufzuschließen. Das Projekt, das auf der Grundlagenarbeit von [Corpus Nummorum](https://www.corpus-nummorum.eu) basiert und aus diesem heraus initiiert wurde, hat eine vorgesehene Laufzeit von 25 Jahren.
 
+**URL des Software-Repositorys:**  
+https://github.com/telota/imagines-nummorum-vlm-data-extraction
+
+**Projektlaufzeit:**  
+von 2025-01-01 bis 2049-12-31
 
 **Angaben zu Autor:in, Herausgeber:in und Entwickler:in**
 
@@ -201,8 +208,8 @@ MIT License: https://opensource.org/licenses/MIT
 
 - Qwen2.5-VL Model: https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct
 - Tesseract OCR: https://github.com/tesseract-ocr/tesseract
-- Imagines Nummorum Project: https://www.imagines-nummorum.eu/
-- The Callataÿ’ file of counterfeit Greek coins on the ACCSN platform: https://accs-network.com/counterfeits-info-cards-collection/
+- Imagines Nummorum: https://www.imagines-nummorum.eu
+- The Callataÿ’ file of counterfeit Greek coins on the ACCSN platform: https://accs-network.com/counterfeits-info-cards-collection
 
 **Zitation:**  
 Imagines Nummorum VLM indexcard data extraction script. Entwickelt von Tim Westphal (2025). Berlin-Brandenburgische Akademie der Wissenschaften - TELOTA. URL: https://github.com/telota/imagines-nummorum-vlm-data-extraction; DOI: [Zenodo DOI bei Release].
@@ -329,7 +336,7 @@ Für detaillierte Konfigurationsoptionen siehe:
 
 ## 🤝 Beitrag und Entwicklung
 
-Dieses Projekt ist Teil des Imagines Nummorum-Vorhabens der Berlin-Brandenburgischen Akademie der Wissenschaften. Beiträge und Verbesserungsvorschläge sind willkommen:
+Dieses Projekt ist ein Beitrag für das Imagines Nummorum-Vorhaben der Berlin-Brandenburgischen Akademie der Wissenschaften. Ergänzungen und Verbesserungsvorschläge sind willkommen:
 
 - GitHub Issues für Fehlerberichte
 - Pull Requests für Code-Beiträge

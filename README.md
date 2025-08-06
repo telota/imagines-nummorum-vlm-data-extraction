@@ -4,7 +4,7 @@
 
 > Ein Computer Vision-Skript zur automatisierten Analyse von Karteikarten einer Sammlung von Münzfälschungen ([The Callataÿ’ file of counterfeit Greek coins on the ACCSN platform](https://accs-network.com/counterfeits-info-cards-collection/)) mit dem Qwen2.5-VL Vision-Language-Model.
 
-![example_input/Abdera-4a.jpg](data/example_input/Abdera-4a.jpg)
+![example_input/Abdera/Abdera-4a.jpg](data/example_input/Abdera/Abdera-4a.jpg)
 
 **Aktuelle Version:** 1.0  
 **Datum:** August 2025

@@ -6,8 +6,6 @@
 
 ![example_input/Abdera/Abdera-4a.jpg](data/example_input/Abdera/Abdera-4a.jpg)
 
-[![DOI](https://zenodo.org/badge/1032582675.svg)](https://doi.org/10.5281/zenodo.16753362)
-
 **Aktuelle Version:** 1.0.0  
 **Datum:** August 2025
 
@@ -157,7 +155,6 @@ Für detaillierte Installationsanweisungen siehe [INSTALLATION.md](docs/INSTALLA
 
 - Aktuell: Version 1.0 (August 2025)
 - Zukünftige Versionen werden mit Release-Notes über GitHub veröffentlicht
-- Zenodo-Integration für DOI-Vergabe geplant
 
 **Abhängigkeiten und Installationsanweisungen:**
 
@@ -185,6 +182,7 @@ tqdm
 hf-xet
 qwen_vl_utils
 natsort
+pandas
 ```
 
 Detaillierte Installationsanweisungen finden Sie in [INSTALLATION.md](docs/INSTALLATION.md).
@@ -202,12 +200,12 @@ Detaillierte Installationsanweisungen finden Sie in [INSTALLATION.md](docs/INSTA
 MIT License: https://opensource.org/licenses/MIT
 
 **Links zu Veröffentlichungen, in denen die Software zitiert oder verwendet wird:**  
-[Wird bei Veröffentlichung ergänzt]
+https://www.corpus-nummorum.eu/resources/open-source-tools
 
 **Links zu anderen öffentlich zugänglichen Stellen der Software:**
 
 - GitHub Repository: https://github.com/telota/imagines-nummorum-vlm-data-extraction
-- Zenodo DOI: [Bei Release verfügbar]
+- Zenodo DOI: [![DOI](https://zenodo.org/badge/1032582675.svg)](https://doi.org/10.5281/zenodo.16753362)
 
 **Links/Beziehungen zu ergänzenden Datensätzen oder Tools:**
 
@@ -217,7 +215,7 @@ MIT License: https://opensource.org/licenses/MIT
 - The Callataÿ’ file of counterfeit Greek coins on the ACCSN platform: https://accs-network.com/counterfeits-info-cards-collection
 
 **Zitation:**  
-Imagines Nummorum VLM indexcard data extraction script. Entwickelt von Tim Westphal (2025). Berlin-Brandenburgische Akademie der Wissenschaften - TELOTA. URL: https://github.com/telota/imagines-nummorum-vlm-data-extraction; DOI: [Zenodo DOI bei Release].
+Imagines Nummorum VLM indexcard data extraction script. Entwickelt von Tim Westphal (2025). Berlin-Brandenburgische Akademie der Wissenschaften - TELOTA. URL: https://github.com/telota/imagines-nummorum-vlm-data-extraction; DOI: https://doi.org/10.5281/zenodo.16753363.
 
 ## D. Informationen zur Methodik und Entwicklung
 

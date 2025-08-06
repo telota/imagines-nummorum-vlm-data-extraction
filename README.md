@@ -6,7 +6,9 @@
 
 ![example_input/Abdera/Abdera-4a.jpg](data/example_input/Abdera/Abdera-4a.jpg)
 
-**Aktuelle Version:** 1.0  
+[![DOI](https://zenodo.org/badge/1032582675.svg)](https://doi.org/10.5281/zenodo.16753362)
+
+**Aktuelle Version:** 1.0.0  
 **Datum:** August 2025
 
 ### Hauptfunktionen

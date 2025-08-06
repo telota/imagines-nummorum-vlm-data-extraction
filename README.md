@@ -2,7 +2,7 @@
 
 ## 🔍 Überblick
 
-> Ein Computer Vision-Skript zur automatisierten Analyse von Karteikarten einer Sammlung von Münzfälschungen mit dem Qwen2.5-VL Vision-Language-Model.
+> Ein Computer Vision-Skript zur automatisierten Analyse von Karteikarten einer Sammlung von Münzfälschungen ([The Callataÿ’ file of counterfeit Greek coins on the ACCSN platform](https://accs-network.com/counterfeits-info-cards-collection/)) mit dem Qwen2.5-VL Vision-Language-Model.
 
 **Aktuelle Version:** 1.0  
 **Datum:** August 2025
@@ -322,7 +322,7 @@ Imagines Nummorum VLM indexcard data extraction script. Entwickelt von Tim Westp
 
 Für detaillierte Konfigurationsoptionen siehe:
 
-- [Technische Dokumentation](docs/TECHNICAL_DOCUMENTATION.md) - Technische Dokumentation
+- [Technische Dokumentation](docs/TECHNICAL_DOCUMENTATION.md)
 - [API-Referenz](docs/API_REFERENCE.md) - Funktions-Parameter
 - [Benutzerhandbuch](docs/USER_GUIDE.md) - Praxisbeispiele
 

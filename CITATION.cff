@@ -12,7 +12,7 @@ repository-code: "https://github.com/telota/imagines-nummorum-vlm-data-extractio
 identifiers:
   - description: "All versions of this Software in Zenodo" 
     type: doi
-    value: XXXX
+    value: 10.5281/zenodo.16753363
 license: "MIT" 
-url: "https://xxxx" 
+url: "https://github.com/telota/imagines-nummorum-vlm-data-extraction" 
 cff-version: 1.2.0

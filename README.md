@@ -202,6 +202,7 @@ MIT License: https://opensource.org/licenses/MIT
 - Qwen2.5-VL Model: https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct
 - Tesseract OCR: https://github.com/tesseract-ocr/tesseract
 - Imagines Nummorum Project: https://www.imagines-nummorum.eu/de
+- The Callataÿ’ file of counterfeit Greek coins on the ACCSN platform: https://accs-network.com/counterfeits-info-cards-collection/
 
 **Zitation:**  
 Imagines Nummorum VLM indexcard data extraction script. Entwickelt von Tim Westphal (2025). Berlin-Brandenburgische Akademie der Wissenschaften - TELOTA. URL: https://github.com/telota/imagines-nummorum-vlm-data-extraction; DOI: [Zenodo DOI bei Release].

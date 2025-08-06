@@ -1,6 +1,6 @@
 # Imagines Nummorum VLM Indexcard Data Extraction Pipeline
 
-## 🔍 Überblick
+## Überblick
 
 > Ein Computer Vision-Skript zur automatisierten Analyse von Karteikarten einer Sammlung von Münzfälschungen ([The Callataÿ’ file of counterfeit Greek coins on the ACCSN platform](https://accs-network.com/counterfeits-info-cards-collection/)) mit dem Qwen2.5-VL Vision-Language-Model.
 
@@ -40,11 +40,14 @@ Imagines Nummorum (https://www.imagines-nummorum.eu)
 **Kurze Beschreibung des Forschungsprojekts und seiner Ziele:**  
 Ziel des Akademienvorhabens „Imagines Nummorum: Thesaurus Iconographicus Nummorum Graecorum Online (ThING)“ ist es, mit der Erarbeitung eines hierarchischen ikonographischen Thesaurus auf der Basis von Linked Open Data das Potenzial antiker griechischer Münzen für bildwissenschaftliche und kulturhistorische Fragestellungen aufzuschließen. Das Projekt, das auf der Grundlagenarbeit von [Corpus Nummorum](https://www.corpus-nummorum.eu) basiert und aus diesem heraus initiiert wurde, hat eine vorgesehene Laufzeit von 25 Jahren.
 
-**URL des Software-Repositorys:**  
-https://github.com/telota/imagines-nummorum-vlm-data-extraction
+**Fächerzugehörigkeit:**
+1.11-03 Alte Geschichte
 
 **Projektlaufzeit:**  
 von 2025-01-01 bis 2049-12-31
+
+**URL des Software-Repositorys:**  
+https://github.com/telota/imagines-nummorum-vlm-data-extraction
 
 **Angaben zu Autor:in, Herausgeber:in und Entwickler:in**
 
@@ -63,7 +66,7 @@ deu (Deutsch), eng (Englisch)
 **Kompatibilität mit Plattformen:**  
 Windows, MacOS, Linux
 
-## 🚀 Schnellstart
+## Schnellstart
 
 ### Voraussetzungen
 
@@ -89,7 +92,7 @@ python src/coin_card_information_extraction.py
 
 Für detaillierte Installationsanweisungen siehe [INSTALLATION.md](docs/INSTALLATION.md).
 
-## 📚 Dokumentation
+## Dokumentation
 
 | Dokument                                                    | Beschreibung                           |
 | ----------------------------------------------------------- | -------------------------------------- |
@@ -326,7 +329,7 @@ Imagines Nummorum VLM indexcard data extraction script. Entwickelt von Tim Westp
 - `"form_extraction_failed"`: Formular-Extraktionsfehler
 - `"text_extraction_failed"`: Text-Extraktionsfehler
 
-## 🔧 Erweiterte Konfiguration
+## Erweiterte Konfiguration
 
 Für detaillierte Konfigurationsoptionen siehe:
 
@@ -334,7 +337,7 @@ Für detaillierte Konfigurationsoptionen siehe:
 - [API-Referenz](docs/API_REFERENCE.md) - Funktions-Parameter
 - [Benutzerhandbuch](docs/USER_GUIDE.md) - Praxisbeispiele
 
-## 🤝 Beitrag und Entwicklung
+## Beitrag und Entwicklung
 
 Dieses Projekt ist ein Beitrag für das Imagines Nummorum-Vorhaben der Berlin-Brandenburgischen Akademie der Wissenschaften. Ergänzungen und Verbesserungsvorschläge sind willkommen:
 
@@ -342,7 +345,7 @@ Dieses Projekt ist ein Beitrag für das Imagines Nummorum-Vorhaben der Berlin-Br
 - Pull Requests für Code-Beiträge
 - Diskussionen für Funktionswünsche
 
-## 📞 Kontakt und Support
+## Kontakt und Support
 
 **Entwickler:** Tim Westphal  
 **Institution:** Berlin-Brandenburgische Akademie der Wissenschaften - TELOTA  

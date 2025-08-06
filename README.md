@@ -33,7 +33,7 @@ Computer Vision Pipeline / Datenverarbeitungs-Skript
 Python, JSON, hOCR XML, CSV
 
 **Titel des Forschungsprojekts:**  
-Imagines Nummorum (https://www.imagines-nummorum.eu/de)
+Imagines Nummorum (https://www.imagines-nummorum.eu/)
 
 **Kurze Beschreibung des Forschungsprojekts und seiner Ziele:**  
 Das Projekt Imagines Nummorum digitalisiert und erschließt antike Münzen. Diese Software unterstützt die automatisierte Extraktion und Strukturierung von Daten aus digitalisierten Karteikarten zur Erstellung einer Forschungsdatenbank.
@@ -201,7 +201,7 @@ MIT License: https://opensource.org/licenses/MIT
 
 - Qwen2.5-VL Model: https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct
 - Tesseract OCR: https://github.com/tesseract-ocr/tesseract
-- Imagines Nummorum Project: https://www.imagines-nummorum.eu/de
+- Imagines Nummorum Project: https://www.imagines-nummorum.eu/
 - The Callataÿ’ file of counterfeit Greek coins on the ACCSN platform: https://accs-network.com/counterfeits-info-cards-collection/
 
 **Zitation:**  

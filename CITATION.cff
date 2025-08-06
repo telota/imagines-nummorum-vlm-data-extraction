@@ -4,7 +4,7 @@ authors:
     given-names: Tim  
     orcid: "https://orcid.org/0009-0000-8580-4558" 
 title: Imagines Nummorum VLM Data Extraction Pipeline
-abstract: "Ein Tool zur automatisierten Analyse Karteikarten mittels Vision-Language-Model (Qwen2.5-VL)"
+abstract: "A Computer Vision script for automated analysis of index cards from a collection of coin counterfeits (The Callataÿ’ file of counterfeit Greek coins on the ACCSN platform) using the Qwen2.5-VL Vision-Language Model. The script performs multi-stage image analysis, classifies images, recognizes handwritten content, and extracts structured data."
 type: software
 date-released: "2025-08-05" 
 version: 1.0.0

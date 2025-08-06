@@ -21,7 +21,7 @@
 ## A. Allgemeine Informationen
 
 **Titel der Software:**  
-Imagines Nummorum VLM Data Extraction Pipeline
+Imagines Nummorum VLM Indexcard Data Extraction Pipeline
 
 **Kurze Beschreibung der Software:**  
 Ein Tool zur automatisierten Analyse von Karteikarten mittels Vision-Language-Model (Qwen2.5-VL). Das System führt eine mehrstufige Bildanalyse durch, klassifiziert Bilder, erkennt handschriftlichen Inhalt und extrahiert strukturierte Daten.
@@ -33,7 +33,7 @@ Computer Vision Pipeline / Datenverarbeitungs-Skript
 Python, JSON, hOCR XML, CSV
 
 **Titel des Forschungsprojekts:**  
-Zuarbeit für das Vorhaben Imagines Nummorum (https://www.imagines-nummorum.eu/de)
+Imagines Nummorum (https://www.imagines-nummorum.eu/de)
 
 **Kurze Beschreibung des Forschungsprojekts und seiner Ziele:**  
 Das Projekt Imagines Nummorum digitalisiert und erschließt antike Münzen. Diese Software unterstützt die automatisierte Extraktion und Strukturierung von Daten aus digitalisierten Karteikarten zur Erstellung einer Forschungsdatenbank.

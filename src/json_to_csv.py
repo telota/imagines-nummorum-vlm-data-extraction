@@ -5,8 +5,20 @@ import re
 import pandas as pd
 
 # Global variables
-ROOT_DIRECTORY = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
-CSV_OUTPUT = os.path.join(ROOT_DIRECTORY, "coin_data.csv")
+ROOT_DIRECTORY = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "..",
+    "data",
+    "example_output",
+    "extracted_data",
+)
+CSV_OUTPUT = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "..",
+    "data",
+    "example_output",
+    "coin_data.csv",
+)
 
 
 def natural_sort_key(s):

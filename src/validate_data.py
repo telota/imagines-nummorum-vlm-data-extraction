@@ -27,11 +27,15 @@ def verify_processing_status(images_dir, output_dir):
                 rel_path = os.path.relpath(root, images_dir)
                 image_name = os.path.splitext(file)[0]
 
-                # Construct expected JSON path
+                # Construct expected JSON path in extracted_data subdirectory
                 if rel_path == ".":
-                    json_path = os.path.join(output_dir, f"{image_name}.json")
+                    json_path = os.path.join(
+                        output_dir, "extracted_data", f"{image_name}.json"
+                    )
                 else:
-                    json_path = os.path.join(output_dir, rel_path, f"{image_name}.json")
+                    json_path = os.path.join(
+                        output_dir, "extracted_data", rel_path, f"{image_name}.json"
+                    )
 
                 # Check if JSON file exists
                 if not os.path.exists(json_path):
@@ -114,15 +118,20 @@ def print_results(results):
 
 if __name__ == "__main__":
     # Set your directories here
-    images_directory = "/mnt/data/projects/imagines_nummorum/coin_cards/scans"  # Replace with your images directory
-    output_directory = "/mnt/data/projects/imagines_nummorum/coin_cards/output"  # Replace with your output directory
+    images_directory = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "..", "data", "example_input"
+    )
+    output_directory = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "..", "data", "example_output"
+    )
 
     # Verify processing
     results = verify_processing_status(images_directory, output_directory)
     print_results(results)
 
     # Optionally save results to file
-    with open("processing_verification.json", "w", encoding="utf-8") as f:
+    output_file = os.path.join(output_directory, "processing_verification.json")
+    with open(output_file, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
 
-    print("\nDetailed results saved to: processing_verification.json")
+    print(f"\nDetailed results saved to: {output_file}")

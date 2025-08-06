@@ -1,0 +1,52 @@
+{
+  "image_path_original": "./data/example_input/Abdera/Abdera-4a.jpg",
+  "image_type": "form",
+  "handwritten_content": false,
+  "data": {
+    "ocr_results": [],
+    "form_data": {
+      "coins": [
+        {
+          "id": "Coin_1",
+          "description": "Circular coin with visible inscriptions or designs.",
+          "bounding_box": {
+            "x": 95,
+            "y": 197,
+            "width": 220,
+            "height": 246
+          }
+        },
+        {
+          "id": "Coin_2",
+          "description": "Circular coin with intricate design details.",
+          "bounding_box": {
+            "x": 430,
+            "y": 188,
+            "width": 225,
+            "height": 258
+          }
+        }
+      ],
+      "card_fields": {
+        "Atelier": "ABDERE",
+        "Date": "",
+        "Faussaire": "",
+        "Provenance": "Cambridge, MAC CLEAN",
+        "Poids": "11,00 g",
+        "Diamètre": "21 mm Ø",
+        "Orientation des axes": "6 h",
+        "Métal": "",
+        "Technique": "",
+        "Publication": "",
+        "Négatifs": "Cambridge, Jan. 95, 8, 15-16",
+        "Remarques": ""
+      }
+    }
+  },
+  "images_extracted": [
+    "Abdera/Abdera-4a_1.png",
+    "Abdera/Abdera-4a_2.png"
+  ],
+  "status": "success",
+  "error_message": null
+}

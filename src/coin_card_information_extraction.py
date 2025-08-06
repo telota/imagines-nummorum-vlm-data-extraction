@@ -21,14 +21,20 @@ TESSERACT_CMD = None  # Set this to your Tesseract-OCR executable path if not in
 # Example for Linux: '/usr/bin/tesseract'
 
 # Coin extraction parameters
-CROP_MARGIN_PIXELS = 40  # Default margin around detected bounding boxes to prevent cutoff
+CROP_MARGIN_PIXELS = (
+    40  # Default margin around detected bounding boxes to prevent cutoff
+)
 INITIAL_CROP_MARGIN = 20  # Initial margin to try (pixels)
-MAX_CROP_MARGIN = 100      # Maximum margin to try (pixels)
-MARGIN_INCREMENT = 5      # Amount to increase margin in each iteration (pixels)
-EDGE_CHECK_WIDTH = 5      # Width of edge band to check for uniformity (pixels)
+MAX_CROP_MARGIN = 100  # Maximum margin to try (pixels)
+MARGIN_INCREMENT = 5  # Amount to increase margin in each iteration (pixels)
+EDGE_CHECK_WIDTH = 5  # Width of edge band to check for uniformity (pixels)
 COLOR_SIMILARITY_THRESHOLD = 30  # RGB distance threshold for similar colors
-EDGE_UNIFORMITY_THRESHOLD = 0.85  # Percentage of edge pixels that must be uniform (0.0-1.0)
-DEBUG_VISUALIZATION = True  # Set to True to save debug visualizations of margin detection
+EDGE_UNIFORMITY_THRESHOLD = (
+    0.85  # Percentage of edge pixels that must be uniform (0.0-1.0)
+)
+DEBUG_VISUALIZATION = (
+    True  # Set to True to save debug visualizations of margin detection
+)
 
 # OCR Strategy for 'text_page' images:
 # Options: "tesseract_hocr_only", "qwen_text_only",
@@ -120,7 +126,7 @@ def load_model_and_processor(model_name, cache_dir):
     # Set Hugging Face home directory to redirect ALL cache files (including from hf-xet)
     os.environ["HF_HOME"] = os.path.abspath(cache_dir)
     print(f"Set Hugging Face cache directory to: {os.environ['HF_HOME']}")
-    
+
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Using device: {device}")
     if device == "cuda":
@@ -187,7 +193,7 @@ def _call_qwen_vl_with_retry(
         return None, f"Image file not found: {image_path}"
     last_error_msg = "Max retries reached for " + stage_name
     for attempt in range(MAX_JSON_RETRIES):
-        #tqdm.write(f"    Attempt {attempt + 1}/{MAX_JSON_RETRIES} for Qwen-VL {stage_name} on {os.path.basename(image_path)}...") # Can be verbose
+        # tqdm.write(f"    Attempt {attempt + 1}/{MAX_JSON_RETRIES} for Qwen-VL {stage_name} on {os.path.basename(image_path)}...") # Can be verbose
         messages = [
             {
                 "role": "user",
@@ -216,7 +222,8 @@ def _call_qwen_vl_with_retry(
             continue
         try:
             generated_ids = model.generate(
-                **inputs, max_new_tokens=max_tokens, #do_sample=False
+                **inputs,
+                max_new_tokens=max_tokens,  # do_sample=False
             )
             generated_ids = [
                 out_ids[len(in_ids) :]
@@ -321,7 +328,7 @@ def _ocr_with_tesseract(image_path):
             "status": "success",
             "error_message": None,
         }
-        
+
     except FileNotFoundError:
         msg = "Tesseract not installed or not in PATH, or TESSERACT_CMD is incorrect."
     except UnidentifiedImageError:
@@ -497,25 +504,33 @@ def process_single_image_multi_stage(
                         base_image_filename = os.path.splitext(
                             os.path.basename(image_full_path)
                         )[0]
-                        #crops_subdir_name = f"{base_image_filename}_extracted_images"
+                        # crops_subdir_name = f"{base_image_filename}_extracted_images"
                         # crops_output_dir = os.path.join(
                         #     output_json_dir_for_image, crops_subdir_name
                         # )
                         # Get relative path from input directory to preserve structure
-                        relative_path_from_input = os.path.relpath(os.path.dirname(image_full_path), INPUT_IMAGE_DIRECTORY)
+                        relative_path_from_input = os.path.relpath(
+                            os.path.dirname(image_full_path), INPUT_IMAGE_DIRECTORY
+                        )
                         if relative_path_from_input == ".":
                             crops_output_dir = OUTPUT_IMAGES_DIRECTORY
                         else:
-                            crops_output_dir = os.path.join(OUTPUT_IMAGES_DIRECTORY, relative_path_from_input)
+                            crops_output_dir = os.path.join(
+                                OUTPUT_IMAGES_DIRECTORY, relative_path_from_input
+                            )
 
                         if not os.path.exists(crops_output_dir):
                             os.makedirs(crops_output_dir)
                         # Get base name of original image for filename prefixing
-                        original_image_base = os.path.splitext(os.path.basename(image_full_path))[0]
+                        original_image_base = os.path.splitext(
+                            os.path.basename(image_full_path)
+                        )[0]
                         for i, coin in enumerate(form_data["coins"]):
                             bbox = coin.get("bounding_box")
                             coin_id = coin.get("id", f"coin_{i+1}")
-                            if bbox and all(k in bbox for k in ["x", "y", "width", "height"]):
+                            if bbox and all(
+                                k in bbox for k in ["x", "y", "width", "height"]
+                            ):
                                 if bbox["width"] > 0 and bbox["height"] > 0:
                                     # Find optimal margin to prevent cutoff using edge analysis
                                     # tqdm.write(f"      Finding optimal margin for coin '{coin_id}'...")
@@ -524,14 +539,16 @@ def process_single_image_multi_stage(
                                         bbox=bbox,
                                         initial_margin=INITIAL_CROP_MARGIN,
                                         max_margin=MAX_CROP_MARGIN,
-                                        increment=MARGIN_INCREMENT
+                                        increment=MARGIN_INCREMENT,
                                     )
-                                    
+
                                     # tqdm.write(f"      Optimal margin for coin '{coin_id}': {optimal_margin}px")
-                                    
+
                                     # Create filename with original image name and coin count
                                     coin_count = i + 1
-                                    cropped_filename = f"{original_image_base}_{coin_count}.png"
+                                    cropped_filename = (
+                                        f"{original_image_base}_{coin_count}.png"
+                                    )
                                     cropped_image_save_path = os.path.join(
                                         crops_output_dir, cropped_filename
                                     )
@@ -540,7 +557,9 @@ def process_single_image_multi_stage(
                                     if relative_path_from_input == ".":
                                         relative_extracted_path = cropped_filename
                                     else:
-                                        relative_extracted_path = os.path.join(relative_path_from_input, cropped_filename)
+                                        relative_extracted_path = os.path.join(
+                                            relative_path_from_input, cropped_filename
+                                        )
                                     final_output["images_extracted"].append(
                                         relative_extracted_path
                                     )
@@ -637,7 +656,12 @@ def batch_process_images_multi_stage(input_dir, output_dir, model_name, cache_di
             continue
 
         result_data = process_single_image_multi_stage(
-            image_full_path, output_json_containing_dir, model, processor, device, input_dir
+            image_full_path,
+            output_json_containing_dir,
+            model,
+            processor,
+            device,
+            input_dir,
         )
         processed_count += 1
         try:
@@ -667,153 +691,170 @@ def batch_process_images_multi_stage(input_dir, output_dir, model_name, cache_di
 def _is_color_similar(color1, color2, threshold=COLOR_SIMILARITY_THRESHOLD):
     """
     Check if two RGB colors are similar based on Euclidean distance.
-    
+
     Args:
         color1: First RGB color tuple or array
         color2: Second RGB color tuple or array
         threshold: Maximum Euclidean distance to be considered similar
-        
+
     Returns:
         bool: True if colors are similar, False otherwise
     """
     return np.sqrt(sum((c1 - c2) ** 2 for c1, c2 in zip(color1, color2))) <= threshold
 
 
-def _is_edge_uniform(image, edge_width=EDGE_CHECK_WIDTH, similarity_threshold=COLOR_SIMILARITY_THRESHOLD, 
-                    uniformity_threshold=EDGE_UNIFORMITY_THRESHOLD):
+def _is_edge_uniform(
+    image,
+    edge_width=EDGE_CHECK_WIDTH,
+    similarity_threshold=COLOR_SIMILARITY_THRESHOLD,
+    uniformity_threshold=EDGE_UNIFORMITY_THRESHOLD,
+):
     """
     Check if the edge of an image has a uniform color, indicating good margin.
-    
+
     Args:
         image: PIL Image object
         edge_width: Width of the edge band to check (pixels)
         similarity_threshold: Color similarity threshold
         uniformity_threshold: Required percentage of uniform edge pixels
-        
+
     Returns:
         bool: True if the edge is uniform enough, False otherwise
     """
     # Convert to numpy array for faster processing
     img_array = np.array(image)
     height, width = img_array.shape[:2]
-    
+
     # Skip if image is too small
-    if width <= 2*edge_width or height <= 2*edge_width:
+    if width <= 2 * edge_width or height <= 2 * edge_width:
         return False
-    
+
     # Sample colors from the four corners (assumed to be background)
     corners = [
-        img_array[0:edge_width, 0:edge_width].mean(axis=(0, 1)),          # Top-left
-        img_array[0:edge_width, width-edge_width:width].mean(axis=(0, 1)), # Top-right
-        img_array[height-edge_width:height, 0:edge_width].mean(axis=(0, 1)), # Bottom-left
-        img_array[height-edge_width:height, width-edge_width:width].mean(axis=(0, 1))  # Bottom-right
+        img_array[0:edge_width, 0:edge_width].mean(axis=(0, 1)),  # Top-left
+        img_array[0:edge_width, width - edge_width : width].mean(
+            axis=(0, 1)
+        ),  # Top-right
+        img_array[height - edge_width : height, 0:edge_width].mean(
+            axis=(0, 1)
+        ),  # Bottom-left
+        img_array[height - edge_width : height, width - edge_width : width].mean(
+            axis=(0, 1)
+        ),  # Bottom-right
     ]
-    
+
     # Use the median of corner colors as the reference background color
     # This helps handle cases where one corner might be different
     background_color = np.median(corners, axis=0)
-    
+
     # Check all pixels in the edge band
     edge_pixels = []
-    
+
     # Top and bottom rows
     for y in range(edge_width):
         edge_pixels.extend(img_array[y, :])
-        edge_pixels.extend(img_array[height-1-y, :])
-    
+        edge_pixels.extend(img_array[height - 1 - y, :])
+
     # Left and right columns (excluding corners already counted)
     for x in range(edge_width):
-        edge_pixels.extend(img_array[edge_width:height-edge_width, x])
-        edge_pixels.extend(img_array[edge_width:height-edge_width, width-1-x])
-    
+        edge_pixels.extend(img_array[edge_width : height - edge_width, x])
+        edge_pixels.extend(img_array[edge_width : height - edge_width, width - 1 - x])
+
     # Count uniform pixels
-    uniform_count = sum(1 for pixel in edge_pixels if _is_color_similar(pixel, background_color, similarity_threshold))
+    uniform_count = sum(
+        1
+        for pixel in edge_pixels
+        if _is_color_similar(pixel, background_color, similarity_threshold)
+    )
     total_pixels = len(edge_pixels)
-    
+
     # Calculate uniformity ratio
     uniformity_ratio = uniform_count / total_pixels if total_pixels > 0 else 0
-    
+
     return uniformity_ratio >= uniformity_threshold
 
 
-def _find_optimal_margin(original_image, bbox, initial_margin=INITIAL_CROP_MARGIN, 
-                        max_margin=MAX_CROP_MARGIN, increment=MARGIN_INCREMENT):
+def _find_optimal_margin(
+    original_image,
+    bbox,
+    initial_margin=INITIAL_CROP_MARGIN,
+    max_margin=MAX_CROP_MARGIN,
+    increment=MARGIN_INCREMENT,
+):
     """
     Find the optimal margin for coin extraction by iteratively testing margins.
-    
+
     Args:
         original_image: PIL Image of the original form
         bbox: Bounding box dictionary with x, y, width, height
         initial_margin: Starting margin to try
         max_margin: Maximum margin to try
         increment: Amount to increase margin in each iteration
-        
+
     Returns:
         tuple: (optimal_margin, cropped_image) with the best margin and resulting image
     """
     # Debug markers
     debug_img = None
-    
+
     # Try increasing margins until we find one that works
     current_margin = initial_margin
     best_image = None
     best_margin = initial_margin
-    
+
     while current_margin <= max_margin:
         # Create box with current margin
         box = (
             max(0, bbox["x"] - current_margin),
             max(0, bbox["y"] - current_margin),
             min(original_image.width, bbox["x"] + bbox["width"] + current_margin),
-            min(original_image.height, bbox["y"] + bbox["height"] + current_margin)
+            min(original_image.height, bbox["y"] + bbox["height"] + current_margin),
         )
-        
+
         # Skip if box dimensions are invalid
         if box[2] <= box[0] or box[3] <= box[1]:
             current_margin += increment
             continue
-            
+
         # Crop the image with current margin
         cropped = original_image.crop(box)
-        
+
         # Check if the edge is uniform
         if _is_edge_uniform(cropped):
             # Found a good margin, save it
             best_margin = current_margin
             best_image = cropped
             break
-        
+
         # Try larger margin
         current_margin += increment
-    
+
     # If no good margin found, use the maximum margin
     if best_image is None:
         box = (
             max(0, bbox["x"] - max_margin),
             max(0, bbox["y"] - max_margin),
             min(original_image.width, bbox["x"] + bbox["width"] + max_margin),
-            min(original_image.height, bbox["y"] + bbox["height"] + max_margin)
+            min(original_image.height, bbox["y"] + bbox["height"] + max_margin),
         )
         best_image = original_image.crop(box)
         best_margin = max_margin
-    
+
     return best_margin, best_image
 
 
 if __name__ == "__main__":
     # --- Configuration ---
-    INPUT_IMAGE_DIRECTORY = "./scans"
-    OUTPUT_JSON_DIRECTORY = "./output"
-    OUTPUT_IMAGES_DIRECTORY = "./extracted_images"
+    INPUT_IMAGE_DIRECTORY = "../data/example_input"
+    OUTPUT_JSON_DIRECTORY = "../data/example_output/extracted_data"
+    OUTPUT_IMAGES_DIRECTORY = "../data/example_output/extracted_images"
 
     MODEL_ID = "Qwen/Qwen2.5-VL-32B-Instruct"
     MODEL_CACHE_DIR = "./qwen2_5_vl_model_cache"
     if not os.path.exists(MODEL_CACHE_DIR):
         os.makedirs(MODEL_CACHE_DIR)
 
-    print(
-        "Starting multi-stage batch processing script ..."
-    )
+    print("Starting multi-stage batch processing script ...")
     batch_process_images_multi_stage(
         input_dir=INPUT_IMAGE_DIRECTORY,
         output_dir=OUTPUT_JSON_DIRECTORY,

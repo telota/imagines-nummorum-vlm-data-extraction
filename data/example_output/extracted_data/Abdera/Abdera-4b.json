@@ -1,0 +1,12 @@
+{
+  "image_path_original": "./data/example_input/Abdera/Abdera-4b.jpg",
+  "image_type": "empty_page",
+  "handwritten_content": false,
+  "data": {
+    "ocr_results": [],
+    "form_data": null
+  },
+  "images_extracted": [],
+  "status": "success",
+  "error_message": null
+}

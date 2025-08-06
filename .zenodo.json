@@ -1,0 +1,25 @@
+{
+    "creators": [
+        {
+            "name": "Westphal, Tim",
+            "orcid": "0009-0000-8580-4558",
+            "affiliation": "Berlin-Brandenburg Academy of Sciences and Humanities",
+            "type": "Developer"
+        }
+    ],
+    "title": "Imagines Nummorum VLM Indexcard Data Extraction Pipeline",
+    "version": "1.0.0",
+    "access_right": "open",
+
+    "keywords": [
+        "computer vision",
+        "digital humanities",
+        "data extraction",
+        "image processing",
+        "OCR/HTR",
+        "VLM"
+    ],
+    "license": "mit",
+    "upload_type": "software",
+    "language": "eng"
+}

@@ -11,3 +11,4 @@ tqdm
 hf-xet
 qwen_vl_utils
 natsort
+pandas
